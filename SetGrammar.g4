@@ -71,8 +71,8 @@ input_signature: OPEN_BRACKET (NAME COMMA)* NAME CLOSE_BRACKET;
 single_arg_pattern: NAME COLON type;
 non_single_args_pattern:  single_arg_pattern COMMA;
 
-function_signature: OPEN_BRACKET non_single_args_pattern* single_arg_pattern CLOSE_BRACKET;
 functionHeader: FUNCTION NAME (function_signature|void_sign);
+function_signature: OPEN_BRACKET non_single_args_pattern* single_arg_pattern CLOSE_BRACKET;
 non_void_function: functionHeader ARROW type block_return;
 void_function: functionHeader (ARROW ((OPEN_BRACKET VOID CLOSE_BRACKET)|void_sign))? block_non_return;
 
@@ -97,9 +97,9 @@ contains: NAME DOT CONTAINS OPEN_BRACKET NAME CLOSE_BRACKET;
 
 body:
         print
-    |   declaration                                             
-    |   function_call
+    |   declaration
     |   declaration_element
+    |   function_call
     |   if_block
     |   while_block
     |   forEach
