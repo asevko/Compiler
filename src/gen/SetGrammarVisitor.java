@@ -76,17 +76,17 @@ public interface SetGrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitNon_single_args_pattern(SetGrammarParser.Non_single_args_patternContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link SetGrammarParser#function_signature}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitFunction_signature(SetGrammarParser.Function_signatureContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link SetGrammarParser#functionHeader}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitFunctionHeader(SetGrammarParser.FunctionHeaderContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link SetGrammarParser#function_signature}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFunction_signature(SetGrammarParser.Function_signatureContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link SetGrammarParser#non_void_function}.
 	 * @param ctx the parse tree

@@ -117,16 +117,6 @@ public interface SetGrammarListener extends ParseTreeListener {
 	 */
 	void exitNon_single_args_pattern(SetGrammarParser.Non_single_args_patternContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link SetGrammarParser#function_signature}.
-	 * @param ctx the parse tree
-	 */
-	void enterFunction_signature(SetGrammarParser.Function_signatureContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link SetGrammarParser#function_signature}.
-	 * @param ctx the parse tree
-	 */
-	void exitFunction_signature(SetGrammarParser.Function_signatureContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link SetGrammarParser#functionHeader}.
 	 * @param ctx the parse tree
 	 */
@@ -136,6 +126,16 @@ public interface SetGrammarListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitFunctionHeader(SetGrammarParser.FunctionHeaderContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link SetGrammarParser#function_signature}.
+	 * @param ctx the parse tree
+	 */
+	void enterFunction_signature(SetGrammarParser.Function_signatureContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link SetGrammarParser#function_signature}.
+	 * @param ctx the parse tree
+	 */
+	void exitFunction_signature(SetGrammarParser.Function_signatureContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link SetGrammarParser#non_void_function}.
 	 * @param ctx the parse tree

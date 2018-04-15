@@ -1,3 +1,5 @@
+package test;
+
 import gen.SetGrammarLexer;
 import gen.SetGrammarParser;
 import org.antlr.v4.runtime.ANTLRFileStream;
@@ -11,6 +13,7 @@ import java.io.IOException;
 public class Main {
     public static void main(String[] args) {
         try {
+
             ANTLRInputStream input = new ANTLRFileStream(args[0]);
             SetGrammarLexer lexer = new SetGrammarLexer(input);
             SetGrammarParser parser = new SetGrammarParser(new CommonTokenStream(lexer));

@@ -147,18 +147,6 @@ public class SetGrammarBaseListener implements SetGrammarListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFunction_signature(SetGrammarParser.Function_signatureContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitFunction_signature(SetGrammarParser.Function_signatureContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterFunctionHeader(SetGrammarParser.FunctionHeaderContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -166,6 +154,18 @@ public class SetGrammarBaseListener implements SetGrammarListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitFunctionHeader(SetGrammarParser.FunctionHeaderContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterFunction_signature(SetGrammarParser.Function_signatureContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitFunction_signature(SetGrammarParser.Function_signatureContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

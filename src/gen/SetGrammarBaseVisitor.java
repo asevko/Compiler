@@ -93,14 +93,14 @@ public class SetGrammarBaseVisitor<T> extends AbstractParseTreeVisitor<T> implem
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitFunction_signature(SetGrammarParser.Function_signatureContext ctx) { return visitChildren(ctx); }
+	@Override public T visitFunctionHeader(SetGrammarParser.FunctionHeaderContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitFunctionHeader(SetGrammarParser.FunctionHeaderContext ctx) { return visitChildren(ctx); }
+	@Override public T visitFunction_signature(SetGrammarParser.Function_signatureContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *

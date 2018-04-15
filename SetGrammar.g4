@@ -7,8 +7,8 @@ CLOSE_CURLY_BRACKET : '}';
 OPEN_SQUARE_BRACKET : '[';
 CLOSE_SQUARE_BRACKET : ']';
 
-ELEMENT: 'element';
-SET: 'set';
+ELEMENT: 'Element';
+SET: 'Set';
 
 LET: 'let';
 
@@ -65,7 +65,7 @@ declaration_element: LET NAME (COLON ELEMENT)? ASSIGN (LINE|function_call|get_ex
 
 set_expression : OPEN_CURLY_BRACKET (NAME COMMA)* NAME CLOSE_CURLY_BRACKET;
 
-function_call: (NAME (input_signature|(OPEN_BRACKET CLOSE_BRACKET)));
+function_call: (NAME (input_signature|void_sign));
 input_signature: OPEN_BRACKET (NAME COMMA)* NAME CLOSE_BRACKET;
 
 single_arg_pattern: NAME COLON type;
@@ -76,7 +76,7 @@ function_signature: OPEN_BRACKET non_single_args_pattern* single_arg_pattern CLO
 non_void_function: functionHeader ARROW type block_return;
 void_function: functionHeader (ARROW ((OPEN_BRACKET VOID CLOSE_BRACKET)|void_sign))? block_non_return;
 
-block_return: OPEN_CURLY_BRACKET body* RETURN NAME CLOSE_CURLY_BRACKET;
+block_return: OPEN_CURLY_BRACKET body* RETURN (NAME | expression) CLOSE_CURLY_BRACKET;
 block_non_return: OPEN_CURLY_BRACKET body* CLOSE_CURLY_BRACKET;
 
 equals: (expression) (EQUAL|NON_EQUAL) (expression);
@@ -86,10 +86,10 @@ negation_compare : NEGATION OPEN_BRACKET simple_compare CLOSE_BRACKET;
 if_block: IF (simple_compare|negation_compare) block else_block?;
 else_block: ELSE block;
 while_block: WHILE (simple_compare|negation_compare) block;
-forEach: FOREACH OPEN_BRACKET NAME IN NAME CLOSE_BRACKET block;
+forEach: FOREACH OPEN_BRACKET ELEMENT NAME IN expression CLOSE_BRACKET block;
 
 
-print: PRINT OPEN_BRACKET (NAME | LINE) CLOSE_BRACKET;
+print: PRINT OPEN_BRACKET (NAME | LINE | function_call) CLOSE_BRACKET;
 get_expression: NAME DOT GET OPEN_BRACKET NUMBER CLOSE_BRACKET;
 has_next: NAME DOT HAS_NEXT void_sign;
 power: NAME DOT POWER void_sign;
@@ -103,6 +103,7 @@ body:
     |   if_block
     |   while_block
     |   forEach
+    |   expression
     ;
 
 expression:
